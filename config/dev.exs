@@ -35,8 +35,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :phoenix_app, PhoenixApp.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "phoenix_app_dev",
+  username: "dev",
+  password: "dev",
+  database: "rails_app_development",
   hostname: "localhost",
   pool_size: 10
