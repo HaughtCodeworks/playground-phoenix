@@ -5,6 +5,8 @@ defmodule PhoenixApp.List do
     field :name, :string
     field :slug, :string
     belongs_to :project, PhoenixApp.Project
+    has_many :items, PhoenixApp.Item
+    has_one :status, PhoenixApp.Status
 
     timestamps()
   end

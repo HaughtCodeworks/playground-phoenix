@@ -4,6 +4,9 @@ defmodule PhoenixApp.Project do
   schema "projects" do
     field :name, :string
     field :slug, :string
+    has_many :lists, PhoenixApp.List
+    many_to_many :users, PhoenixApp.User, join_through: "projects_users"
+    has_many :items, through: [:lists, :items]
 
     timestamps()
   end

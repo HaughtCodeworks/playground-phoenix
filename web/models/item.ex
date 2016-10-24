@@ -4,6 +4,7 @@ defmodule PhoenixApp.Item do
   schema "items" do
     field :description, :string
     belongs_to :list, PhoenixApp.List
+    has_one :status, through: [:list, :status]
 
     timestamps()
   end

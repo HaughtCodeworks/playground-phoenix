@@ -4,6 +4,9 @@ defmodule PhoenixApp.User do
   schema "users" do
     field :email, :string
     field :encrypted_password, :string
+    many_to_many :projects, PhoenixApp.Project, join_through: "projects_users"
+    has_many :lists, through: [:projects, :lists]
+    has_many :items, through: [:lists, :items]
 
     timestamps()
   end
